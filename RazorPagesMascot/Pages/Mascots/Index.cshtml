@@ -1,0 +1,54 @@
+﻿@page
+@model RazorPagesMascot.Pages.Mascots.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Mascot[0].MascotName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mascot[0].DateBegan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mascot[0].School)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mascot[0].Salary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Mascot) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MascotName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateBegan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.School)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

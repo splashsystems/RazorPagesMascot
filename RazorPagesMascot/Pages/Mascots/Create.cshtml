@@ -1,0 +1,49 @@
+﻿@page
+@model RazorPagesMascot.Pages.Mascots.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Mascot</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Mascot.MascotName" class="control-label"></label>
+                <input asp-for="Mascot.MascotName" class="form-control" />
+                <span asp-validation-for="Mascot.MascotName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mascot.DateBegan" class="control-label"></label>
+                <input asp-for="Mascot.DateBegan" class="form-control" />
+                <span asp-validation-for="Mascot.DateBegan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mascot.School" class="control-label"></label>
+                <input asp-for="Mascot.School" class="form-control" />
+                <span asp-validation-for="Mascot.School" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mascot.Salary" class="control-label"></label>
+                <input asp-for="Mascot.Salary" class="form-control" />
+                <span asp-validation-for="Mascot.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
