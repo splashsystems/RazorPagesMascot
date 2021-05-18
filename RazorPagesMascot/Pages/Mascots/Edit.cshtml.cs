@@ -23,6 +23,7 @@ namespace RazorPagesMascot.Pages.Mascots
         [BindProperty]
         public Mascot Mascot { get; set; }
 
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)

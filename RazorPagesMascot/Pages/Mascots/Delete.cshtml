@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int}"
 @model RazorPagesMascot.Pages.Mascots.DeleteModel
 
 @{
@@ -37,7 +37,7 @@
             @Html.DisplayFor(model => model.Mascot.Salary)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Mascot.ID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
