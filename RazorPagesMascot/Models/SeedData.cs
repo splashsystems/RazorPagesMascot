@@ -26,7 +26,8 @@ namespace RazorPagesMascot.Models
                         MascotName = "Brutus Buckeye",
                         DateBegan = DateTime.Parse("1928-1-1"),
                         School = "The Ohio State University",
-                        Salary = 23000.00M
+                        Salary = 23000.00M,
+                        Rating = "A"
                     },
 
                     new Mascot
@@ -34,7 +35,8 @@ namespace RazorPagesMascot.Models
                         MascotName = "Josephine Bruin",
                         DateBegan = DateTime.Parse("1967-9-15"),
                         School = "UCLA",
-                        Salary = 26000.00M
+                        Salary = 26000.00M,
+                        Rating = "A"
                     },
 
                     new Mascot
@@ -42,7 +44,8 @@ namespace RazorPagesMascot.Models
                         MascotName = "The Phoenix",
                         DateBegan = DateTime.Parse("1874-9-15"),
                         School = "University of Chicago",
-                        Salary = 24500.00M
+                        Salary = 24500.00M,
+                        Rating = "A"
                     },
 
                     new Mascot
@@ -50,7 +53,8 @@ namespace RazorPagesMascot.Models
                         MascotName = "Cactus Needle",
                         DateBegan = DateTime.Parse("2005-9-15"),
                         School = "Western Desert",
-                        Salary = 12000M
+                        Salary = 12000M,
+                        Rating = "A"
                     }
                 );
                 context.SaveChanges();

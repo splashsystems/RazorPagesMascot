@@ -18,5 +18,6 @@ namespace RazorPagesMascot.Models
         public string School { get; set; }
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Salary { get; set; }
+        public string Rating { get; set; }
     }
 }
