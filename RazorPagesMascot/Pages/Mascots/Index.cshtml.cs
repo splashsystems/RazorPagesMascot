@@ -29,6 +29,10 @@ namespace RazorPagesMascot.Pages.Mascots
 
         public async Task OnGetAsync()
         {
+            // Use LINQ to get list of genres.
+            IQueryable<string> schoolQuery = from s in _context.Mascot
+                                            orderby s.School
+                                            select s.School;
             var mascots = from m in _context.Mascot
                          select m;
             if (!string.IsNullOrEmpty(SearchString))
@@ -36,6 +40,12 @@ namespace RazorPagesMascot.Pages.Mascots
                 mascots = mascots.Where(s => s.MascotName.Contains(SearchString));
             }
 
+            if (!string.IsNullOrEmpty(MascotSchool))
+            {
+                mascots = mascots.Where(x => x.School == MascotSchool);
+            }
+            Schools = new SelectList(await schoolQuery.Distinct().ToListAsync());
+            
             Mascot = await mascots.ToListAsync();
         }
         
